@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 16px;
+    font-family: Arial, sans-serif;
+    background: #eef0f2;
+    color: #202124;
+}
+
+.cabecera h1{
+    font-size: 18px;
+}
+
+.tarjeta {
+    width: 780px;
+    max-width: 100%;
+    margin: auto;
+    background: white;
+}
+
+/* Cabecera */
+.cabecera {
+    background: #1c1c1e;
+    color: white;
+    padding: 22px 24px;
+    font-size: 21px;
+    font-weight: bold;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* Partidos */
+.partidos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.partido {
+    padding: 20px 24px;
+    border-right: 1px solid #e2e4e7;
+    border-bottom: 1px solid #e2e4e7;
+}
+
+/* Competición */
+.competicion {
+    font-size: 13px;
+    color: #1a73e8;
+    margin-bottom: 10px;
+}
+
+/* Contenido */
+.contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Equipos */
+.equipos {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.equipo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Escudos */
+.escudo {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+/* Nombre y resultado */
+.nombre {
+    font-size: 15px;
+}
+
+.resultado {
+    font-size: 15px;
+    margin-left: auto;
+}
+
+.flecha {
+    color: #5f6368;
+}
+
+/* Separador */
+.separador {
+    width: 1px;
+    background: #e2e4e7;
+    margin: 0 15px;
+}
+
+/* Información */
+.informacion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-direction: column;
+}
+
+.estado {
+    text-align: center;
+    font-size: 13px;
+}
+
+.estado span {
+    color: #5f6368;
+}
+
+/* Imagen */
+.imagen img {
+    width: 102px;
+    height: 50px;
+    border-radius: 6px;
+    
+}
+
+/* Partido vacío */
+.vacio {
+    background: #f7f8f9;
+}
+
+/* Pie */
+.pie {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 24px;
+    border-top: 1px solid #e2e4e7;
+    font-size: 13px;
+}
+
+.texto {
+    color: #5f6368;
+}
+
+.sugerencias p {
+    color:#5f6368;
+}
