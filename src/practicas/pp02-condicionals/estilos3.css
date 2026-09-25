@@ -1,0 +1,13 @@
+.par{
+    width: 300px;
+    height: 150px;
+    background-color: red;
+    text-align: center;
+}
+
+.impar{
+    width: 300px;
+    height: 150px;
+    background-color: orange;
+    text-align: center;
+}
