@@ -26,8 +26,8 @@ $media = 0;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles5.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="estilos5.css">
+    <title>L’home del temps</title>
 </head>
 <body>
     

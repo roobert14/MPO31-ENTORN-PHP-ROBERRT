@@ -15,7 +15,7 @@ $numero = rand(0, 100);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos3.css">
-    <title>Document</title>
+    <title>Nombre aleatori parell o senar</title>
 </head>
 <body>
     
