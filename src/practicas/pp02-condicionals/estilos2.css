@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 30px;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    justify-content: center;
+    gap: 20px;
+}
+
+section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #ccc;
+}
+
+h2 {
+    color: #3498db;
+    margin-top: 5px;
+}
+
+section div {
+    padding: 4px;
+    color: #333;
+}
+
+section div:hover {
+    background-color: #e8f4fc;
+}

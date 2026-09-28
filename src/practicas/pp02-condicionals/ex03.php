@@ -3,7 +3,6 @@
 $numero = rand(0, 100);
 
 ?>
-
 <?php if ($numero % 2 == 0):?>
         <div class="par">El <?= $numero ?> es par</div>
 <?php else:?>
