@@ -182,3 +182,227 @@ body {
     font-size: 100px;
 }
 
+.projectes_actius {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.carta {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.header_carta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.numero_nombre {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.numero_nombre span {
+    color: #6b7280;
+    font-weight: 600;
+}
+
+.nombre {
+    margin: 0;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.prioridad {
+    padding: 5px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+}
+
+.prioridad.alta {
+    background: #ffe1e4;
+    color: #c6283d;
+}
+
+.prioridad.mitjana {
+    background: #fff0b8;
+    color: #9a7000;
+}
+
+.prioridad.baixa {
+    background: #cef5dd;
+    color: #23824c;
+}
+
+.informacion_carta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.icono_carta {
+    width: 38px;
+    height: 38px;
+    background: #eef5ff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icono_carta img {
+    width: 22px;
+    height: 22px;
+}
+
+.texto_carta p {
+    margin: 0 0 4px;
+    font-size: 12px;
+}
+
+.texto_carta span {
+    color: #9ca3af;
+    font-size: 10px;
+}
+
+.pie_carta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eeeeee;
+    font-size: 11px;
+    color: #374151;
+}
+
+.prioritat_text {
+    font-weight: 600;
+}
+
+.resumen {
+    display: flex;
+    gap: 15px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+
+.resumen_izquierda {
+    width: 55%;
+    background-color: #f0f7ff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.titulo_resumen {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.titulo_resumen img {
+    width: 40px;
+    height: 40px;
+}
+
+.titulo_resumen h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.titulo_resumen p {
+    margin: 3px 0 0;
+    color: grey;
+    font-size: 12px;
+}
+
+.datos_resumen {
+    display: flex;
+    margin-top: 25px;
+}
+
+.dato {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 15px;
+    border-right: 1px solid #d9e1ea;
+}
+
+.dato:first-child {
+    padding-left: 0;
+}
+
+.dato:last-child {
+    border-right: none;
+}
+
+.dato img {
+    width: 30px;
+    height: 30px;
+}
+
+.dato strong {
+    font-size: 20px;
+}
+
+.dato p {
+    margin: 3px 0 0;
+    color: grey;
+    font-size: 11px;
+}
+
+
+
+.tecnologias {
+    width: 45%;
+    background-color: #f7f5ff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.titulo_tecnologias {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.titulo_tecnologias img {
+    width: 40px;
+    height: 40px;
+}
+
+.titulo_tecnologias h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.titulo_tecnologias p {
+    margin: 3px 0 0;
+    color: grey;
+    font-size: 12px;
+}
+
+.lista_tecnologias {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.lista_tecnologias p {
+    padding: 8px 15px;
+    border-radius: 20px;
+    background-color: #ddd;
+    font-size: 12px;
+}
+
