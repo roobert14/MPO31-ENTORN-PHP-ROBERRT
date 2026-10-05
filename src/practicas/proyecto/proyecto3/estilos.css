@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.parte_izquierda{
+  display: flex;
+  align-items: center;
+  background-color: #1E293B;
+  padding: 5px;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+.parte_izquierda img{
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+}
+
+.parte_izquierda h1{
+  color: white;
+  font-size: 22px;
+}
+
+
+.parte_derecha .lista{
+  color: white;
+  display: flex;
+  gap: 35px;
+  list-style: none;
+  margin-left: 850px;
+}
+
+.subheader{
+  background-color: #EFF6FF;
+  width: 1440px;
+  margin: 0;
+  padding: 10px 80px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.partesub_izquierda h1{
+  margin-bottom: 0;
+}
+
+.partesub_izquierda p{
+  color: grey;
+  margin-top: 10px;
+}
+
+
+.partesub_derecha{
+  align-items: center;
+  display: flex;
+  border: blue 1px;
+  width: 330px;
+  gap: 20px;
+  background-color: #DBEAFE;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  
+}
+
+.main{
+  display: flex;
+  padding: 5px 40px;
+}
+
+
+
+.lista_tecnologies {
+  display: flex;
+  gap: 20px;
+}
+
+.lista2{
+   border: 1px solid;
+   padding: 5px 15px;
+   border-radius: 10px;
+}
+
