@@ -13,7 +13,6 @@ body {
     background: #ffffff;
     padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
@@ -27,40 +26,4 @@ body {
     color: #666;
     font-size: 14px;
     margin: 0 0 20px 0;
-}
-
-/* Contenedor responsive para que el vídeo no se deforme */
-.video-box {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* Proporción 16:9 */
-    height: 0;
-    background: #000;
-    border-radius: 4px;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-.video-box iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.volver {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ed1c24;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.volver:hover {
-    background-color: #c8141b;
 }

@@ -11,7 +11,7 @@ include "pelicules.php";
 </head>
 <body>
 
-<!-- Barra superior d'icones i idioma (Estil OCINE) -->
+
 <div class="top-bar">
     <div class="wrapper-top">
         <div class="social-icons">
@@ -27,7 +27,7 @@ include "pelicules.php";
     </div>
 </div>
 
-<!-- Capçalera principal -->
+
 <header class="header-principal">
     <div class="wrapper-header">
         <div class="logo-container">
@@ -46,10 +46,10 @@ include "pelicules.php";
     </div>
 </header>
 
-<!-- Contingut centralitzat -->
+
 <div class="main-container">
 
-    <!-- Banner promocional -->
+   
     <div class="banner-promo">
         <img src="assets/martes.jpg" alt="Cinema en gran per a un públic sènior">
         <div class="banner-content">
@@ -57,7 +57,7 @@ include "pelicules.php";
         </div>
     </div>
 
-    <!-- Secció de Cartellera i Filtres -->
+   
     <div class="seccion-cartelera">
         <div class="cartelera-header">
             <h2>Cartellera</h2>
@@ -66,7 +66,7 @@ include "pelicules.php";
             </div>
         </div>
 
-        <!-- Botons de filtres -->
+       
         <div class="filtros">
             <div class="botones-cat">
                 <button class="filtro-btn activo">Cartellera</button>
@@ -85,7 +85,7 @@ include "pelicules.php";
             </div>
         </div>
 
-        <!-- Graella de pel·lícules -->
+        
         <div class="cartelera">
             <?php foreach ($pelicules as $id => $pelicula) { ?>
             <div class="tarjeta">

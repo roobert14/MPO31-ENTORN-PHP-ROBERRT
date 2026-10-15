@@ -4,9 +4,6 @@ include "pelicules.php";
 if (isset($_GET["id"]) && isset($pelicules[$_GET["id"]])) {
     $id = $_GET["id"];
     $pelicula = $pelicules[$id];
-} else {
-    echo "Pel·lícula no trobada.";
-    exit;
 }
 ?>
 

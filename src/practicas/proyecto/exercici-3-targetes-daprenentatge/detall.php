@@ -4,9 +4,6 @@ include "pelicules.php";
 if (isset($_GET["id"]) && isset($pelicules[$_GET["id"]])) {
     $id = $_GET["id"];
     $pelicula = $pelicules[$id];
-} else {
-    echo "Pel·lícula no trobada.";
-    exit;
 }
 ?>
 <!DOCTYPE html>
@@ -25,7 +22,7 @@ if (isset($_GET["id"]) && isset($pelicules[$_GET["id"]])) {
 
 <div class="detalle">
 
-    <!-- Columna Esquerra (Pòster i Tràiler) -->
+    
     <div class="detalle-col-left">
         <img class="poster" src="<?php echo $pelicula["imatge"]; ?>" alt="Imatge de la pel·lícula">
         <div class="botones">
@@ -33,7 +30,7 @@ if (isset($_GET["id"]) && isset($pelicules[$_GET["id"]])) {
         </div>
     </div>
 
-    <!-- Columna Dreta (Informació i Horaris) -->
+    
     <div class="detalle-col-right">
         <p><?php echo $pelicula["sinopsi"]; ?></p>
         
@@ -49,7 +46,7 @@ if (isset($_GET["id"]) && isset($pelicules[$_GET["id"]])) {
         <p><strong>Gènere:</strong> <?php echo $pelicula["genere"]; ?></p>
 
 
-        <!-- Horaris estil cartellera -->
+        
         <div class="bloque-horarios">
             <span class="etiqueta-atmos">ATMOS</span>
             <div class="lista-horas">
