@@ -87,30 +87,39 @@ include "pelicules.php";
 
         
         <div class="cartelera">
+
             <?php foreach ($pelicules as $id => $pelicula) { ?>
+
             <div class="tarjeta">
-                <img class="poster" src="<?php echo $pelicula["imatge"]; ?>" alt="<?php echo $pelicula["nom"]; ?>">
-                
-                <div class="info-hover">
-                    <div class="informacion">
-                        <h2><?php echo $pelicula["nom"]; ?></h2>
-                        <p>avui, en cartellera</p>
-                        
-                        <?php foreach ($pelicula["horaris"] as $hora) { ?>
-                            <span class="hora"><?php echo $hora; ?></span>
-                        <?php } ?>
+                <img class="poster"
+                    src="<?php echo $pelicula["imatge"]; ?>"
+                    alt="<?php echo $pelicula["nom"]; ?>">
 
-                        <a class="mes-info" href="detall.php?id=<?php echo $id; ?>">VEURE MÉS DIES</a>
+                    <div class="info-hover">
+                        <div class="informacion">
+                            <h2><?php echo $pelicula["nom"]; ?></h2>
+                            <p>avui, en cartellera</p>
 
-                        <div class="enlaces">
-                            <a href="trailer.php?id=<?php echo $id; ?>">▶ TRÀILER</a>
-                            <a href="detall.php?id=<?php echo $id; ?>">▣ INFO</a>
+                            <?php foreach ($pelicula["horaris"] as $hora) { ?>
+                                <span class="hora"><?php echo $hora; ?></span>
+                            <?php } ?>
+
+                            <a class="mes-info" href="detall.php?id=<?php echo $pelicula["id"]; ?>">VEURE MÉS DIES</a>
+
+                            <div class="enlaces">
+                                <a href="trailer.php?id=<?php echo $pelicula["id"]; ?>">▶ TRÀILER</a>
+                                <a href="detall.php?id=<?php echo $pelicula["id"]; ?>">▣ INFO</a>
+                            </div>
                         </div>
+
+                        <img class="poster-hover"
+                            src="<?php echo $pelicula["imatge"]; ?>"
+                            alt="<?php echo $pelicula["nom"]; ?>">
                     </div>
-                    <img class="poster-hover" src="<?php echo $pelicula["imatge"]; ?>" alt="<?php echo $pelicula["nom"]; ?>">
                 </div>
-            </div>
+
             <?php } ?>
+
         </div>
     </div>
 

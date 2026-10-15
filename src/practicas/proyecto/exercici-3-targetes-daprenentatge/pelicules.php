@@ -3,6 +3,7 @@
 $pelicules = [
 
     1 => [
+        "id" => 1,
         "nom" => "Coyote vs. ACME",
         "imatge" => "assets/coyote.jpg",
         "horaris" => ["20:00"],
@@ -16,6 +17,7 @@ $pelicules = [
     ],
 
     2 => [
+        "id" => 2,
         "nom" => "Cronos",
         "imatge" => "assets/cronos.jpg",
         "horaris" => ["16:15", "22:30"],
@@ -29,6 +31,7 @@ $pelicules = [
     ],
 
     3 => [
+        "id" => 3,
         "nom" => "Digger",
         "imatge" => "assets/digger.jpg",
         "horaris" => ["19:45", "22:15"],
@@ -42,6 +45,7 @@ $pelicules = [
     ],
 
     4 => [
+        "id" => 4,
         "nom" => "Doraemon: Aventures al món de l'art",
         "imatge" => "assets/doraemon.jpg",
         "horaris" => ["16:40"],
@@ -55,6 +59,7 @@ $pelicules = [
     ],
 
     5 => [
+        "id" => 5,
         "nom" => "El árbol muy muy lejano",
         "imatge" => "assets/arbol.jpg",
         "horaris" => ["16:00"],
@@ -68,6 +73,7 @@ $pelicules = [
     ],
 
     6 => [
+        "id" => 6,
         "nom" => "El precio de la red",
         "imatge" => "assets/red.jpg",
         "horaris" => ["16:00", "18:15", "20:30", "22:40"],
@@ -81,6 +87,7 @@ $pelicules = [
     ],
 
     7 => [
+        "id" => 7,
         "nom" => "La bola negra",
         "imatge" => "assets/bola.jpg",
         "horaris" => ["15:50", "18:00", "20:00", "21:45"],
@@ -94,6 +101,7 @@ $pelicules = [
     ],
 
     8 => [
+        "id" => 8,
         "nom" => "La isla olvidada",
         "imatge" => "assets/isla.jpg",
         "horaris" => ["18:15"],
@@ -107,6 +115,7 @@ $pelicules = [
     ],
 
     9 => [
+        "id" => 9,
         "nom" => "La otra madre",
         "imatge" => "assets/madre.jpg",
         "horaris" => ["16:30", "18:30", "20:30", "22:30"],
@@ -120,6 +129,7 @@ $pelicules = [
     ],
 
     10 => [
+        "id" => 10,
         "nom" => "Verity: La sombra de un engaño",
         "imatge" => "assets/verity.jpg",
         "horaris" => ["18:15", "20:30", "22:40"],
