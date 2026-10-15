@@ -11,51 +11,108 @@ include "pelicules.php";
 </head>
 <body>
 
-<header>
-    <h1>Cartellera de cinema</h1>
-    <p>OCINE Màgic Badalona</p>
+<!-- Barra superior d'icones i idioma (Estil OCINE) -->
+<div class="top-bar">
+    <div class="wrapper-top">
+        <div class="social-icons">
+            <span class="icon-fb">f</span>
+            <span class="icon-x">𝕏</span>
+            <span class="icon-ig">📷</span>
+            <span class="icon-tk">♪</span>
+        </div>
+        <div class="lang-selector">
+            <span class="es active">ES</span>
+            <span class="ca">CA</span>
+        </div>
+    </div>
+</div>
+
+<!-- Capçalera principal -->
+<header class="header-principal">
+    <div class="wrapper-header">
+        <div class="logo-container">
+            <h1 class="logo">OCINE</h1>
+            <span class="sub-logo">MÀGIC</span>
+        </div>
+        <nav class="nav-menu">
+            <a href="#" class="active">CARTELLERA</a>
+            <a href="#">BAR</a>
+            <a href="#">EL CINEMA</a>
+            <a href="#">SCREEN X</a>
+            <a href="#">SALA KIDS</a>
+            <a href="#">FIDELITY</a>
+            <a href="#">ALTRES CINES</a>
+        </nav>
+    </div>
 </header>
 
-<h2 class="titulo">Pel·lícules en cartellera</h2>
+<!-- Contingut centralitzat -->
+<div class="main-container">
 
-<div class="cartelera">
+    <!-- Banner promocional -->
+    <div class="banner-promo">
+        <img src="assets/martes.jpg" alt="Cinema en gran per a un públic sènior">
+        <div class="banner-content">
+            <h2>Cinema en gran per a un públic sènior.</h2>
+        </div>
+    </div>
 
-    <?php foreach ($pelicules as $id => $pelicula) { ?>
-
-        <div class="tarjeta">
-
-            <img src="<?php echo $pelicula["imatge"]; ?>"
-                 alt="Imatge de la pel·lícula">
-
-            <div class="contenido">
-
-                <h2><?php echo $pelicula["nom"]; ?></h2>
-
-                <p><strong>Horaris:</strong></p>
-
-                <?php foreach ($pelicula["horaris"] as $hora) { ?>
-                    <span class="hora">
-                        <?php echo $hora; ?>
-                    </span>
-                <?php } ?>
-
-                <div class="botones">
-
-                    <a href="trailer.php?id=<?php echo $id; ?>">
-                        Veure tràiler
-                    </a>
-
-                    <a href="detall.php?id=<?php echo $id; ?>">
-                        Més informació
-                    </a>
-
-                </div>
-
+    <!-- Secció de Cartellera i Filtres -->
+    <div class="seccion-cartelera">
+        <div class="cartelera-header">
+            <h2>Cartellera</h2>
+            <div class="vista-iconos">
+                <span>⊞</span> <span>☰</span>
             </div>
-
         </div>
 
-    <?php } ?>
+        <!-- Botons de filtres -->
+        <div class="filtros">
+            <div class="botones-cat">
+                <button class="filtro-btn activo">Cartellera</button>
+                <button class="filtro-btn">Vose</button>
+                <button class="filtro-btn">Screen X</button>
+                <button class="filtro-btn">Sala Kids</button>
+                <button class="filtro-btn">Esdeveniments</button>
+                <button class="filtro-btn">Venda anticipada</button>
+                <button class="filtro-btn">Properament</button>
+            </div>
+            <div class="genero-select">
+                <label>Escull un gènere:</label>
+                <select>
+                    <option>Tots els gèneres</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Graella de pel·lícules -->
+        <div class="cartelera">
+            <?php foreach ($pelicules as $id => $pelicula) { ?>
+            <div class="tarjeta">
+                <img class="poster" src="<?php echo $pelicula["imatge"]; ?>" alt="<?php echo $pelicula["nom"]; ?>">
+                
+                <div class="info-hover">
+                    <div class="informacion">
+                        <h2><?php echo $pelicula["nom"]; ?></h2>
+                        <p>avui, en cartellera</p>
+                        
+                        <?php foreach ($pelicula["horaris"] as $hora) { ?>
+                            <span class="hora"><?php echo $hora; ?></span>
+                        <?php } ?>
+
+                        <a class="mes-info" href="detall.php?id=<?php echo $id; ?>">VEURE MÉS DIES</a>
+
+                        <div class="enlaces">
+                            <a href="trailer.php?id=<?php echo $id; ?>">▶ TRÀILER</a>
+                            <a href="detall.php?id=<?php echo $id; ?>">▣ INFO</a>
+                        </div>
+                    </div>
+                    <img class="poster-hover" src="<?php echo $pelicula["imatge"]; ?>" alt="<?php echo $pelicula["nom"]; ?>">
+                </div>
+            </div>
+            <?php } ?>
+        </div>
+    </div>
 
 </div>
 

@@ -1,148 +1,334 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f1f1f1;
-    color: #222;
+    background-color: #ffffff;
+    color: #333;
 }
 
-header {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 25px;
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-header h1 {
-    margin: 0;
+
+.top-bar {
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 8px 0;
 }
 
-.titulo {
-    text-align: center;
-    margin: 30px;
-}
-
-.cartelera {
+.wrapper-top {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    font-size: 12px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 8px;
+    color: white;
+}
+
+.social-icons span {
+    background-color: #ed1c24;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 25px;
-    padding: 20px;
+    font-size: 10px;
+    cursor: pointer;
 }
 
-.tarjeta {
+
+
+/* --- CAPÇALERA PRINCIPAL --- */
+.header-principal {
     background-color: white;
-    width: 250px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px #ccc;
+    border-bottom: 1px solid #eaeaea;
+    padding: 15px 0;
 }
 
-.tarjeta img {
+.wrapper-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    color: #ed1c24;
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 0;
+    font-family: 'Times New Roman', serif;
+    border-bottom: 3px solid #ed1c24;
+    padding-bottom: 2px;
+}
+
+.sub-logo {
+    font-size: 10px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: #ed1c24;
+}
+
+/* --- BANNER PROMOCIONAL --- */
+
+/* --- BANNER PROMOCIONAL --- */
+.banner-promo {
+    position: relative; /* Clave para que los hijos absolutos se posicionen respecto a esto */
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    margin: 30px 0;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-.contenido {
-    padding: 15px;
-}
-
-.contenido h2 {
-    font-size: 20px;
-}
-
-.hora {
-    display: inline-block;
-    background-color: #eee;
-    padding: 7px;
-    margin: 3px;
+/* La imagen marca el tamaño real y se adapta de forma fluida */
+.banner-promo img {
+    width: 100%;
+    height: auto;
+    display: block;
     border-radius: 4px;
 }
 
-.botones {
+/* El texto se coloca flotando encima de la imagen */
+.banner-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+    justify-content: center; 
+    padding: 0 50px; 
+    box-sizing: border-box;
+    color: white; /* Asegura que el texto se lea bien */
 }
 
-.botones a,
-.volver {
-    display: block;
-    background-color: #252525;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    padding: 10px;
-    border-radius: 5px;
+.banner-content h2 {
+    font-size: 40px;
+    margin: 0 0 8px 0;
+    font-weight: bold;
 }
 
-.botones a:hover,
-.volver:hover {
-    background-color: #555;
+
+/* --- SECCIÓ CARTELLERA I FILTRES --- */
+.seccion-cartelera {
+    margin-bottom: 50px;
 }
 
-.detalle {
-    background-color: white;
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 25px;
-    border-radius: 8px;
-}
-
-.poster {
-    width: 250px;
-    max-width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-    margin: auto;
-}
-
-.estrellas {
-    color: orange;
-    font-size: 30px;
-}
-
-.carrusel {
+.cartelera-header {
     display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    margin: 15px 0;
-}
-
-.carrusel img {
-    width: 180px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.trailer {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 15px;
-    text-align: center;
-}
-
-.trailer iframe {
-    width: 100%;
-    height: 450px;
-    border: none;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
-.volver {
-    max-width: 250px;
-    margin: 20px auto;
+.cartelera-header h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
 }
 
-@media (max-width: 600px) {
-    .detalle {
-        margin: 15px;
-    }
+.vista-iconos {
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+}
 
-    .trailer iframe {
-        height: 250px;
-    }
+.filtros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.botones-cat {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filtro-btn {
+    background-color: white;
+    border: 1px solid #d0d0d0;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #333;
+}
+
+.filtro-btn.activo, .filtro-btn:hover {
+    background-color: #ed1c24;
+    color: white;
+    border-color: #ed1c24;
+}
+
+.genero-select {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    color: #666;
+}
+
+.genero-select select {
+    padding: 6px 12px;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    margin-top: 4px;
+    font-size: 13px;
+    background-color: white;
+}
+
+/* --- TARGETES DE PEL·LÍQUULES CENTRADES --- */
+.cartelera {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra les targetes dins del contenidor */
+    gap: 20px;
+}
+
+.tarjeta {
+    position: relative;
+    width: 210px;
+    height: 310px;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.info-hover {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 420px; 
+    height: 310px;
+    background-color: black;
+    color: white;
+    border: 3px solid #ddd;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.tarjeta:hover .info-hover {
+    display: flex;
+}
+
+.informacion {
+    width: 50%;
+    padding: 12px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.informacion h2 {
+    color: #ed1c24;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+
+.informacion p {
+    font-size: 11px;
+    margin: 0 0 10px 0;
+    color: #aaa;
+}
+
+.hora {
+    background-color: #ed1c24;
+    color: white;
+    padding: 3px 6px;
+    margin-bottom: 4px;
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+.mes-info {
+    color: white;
+    border: 1px solid white;
+    text-decoration: none;
+    padding: 4px 8px;
+    font-size: 10px;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+.enlaces {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: auto;
+}
+
+.enlaces a {
+    color: #ed1c24;
+    border: 1px solid #ed1c24;
+    text-decoration: none;
+    padding: 4px 6px;
+    font-size: 10px;
+    border-radius: 2px;
+}
+
+.enlaces a:hover {
+    background-color: #ed1c24;
+    color: white;
+}
+
+.poster-hover {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
 }
