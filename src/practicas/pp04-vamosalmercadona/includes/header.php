@@ -1,18 +1,23 @@
 <header class="navbar navbar-expand-lg navbar-light bg-light mb-5">
-<div class="container-fluid d-flex justify-content-between">
+  <div class="container-fluid">
+    
+    <a class="navbar-brand m-0">
+      <img class="logomerc" src="data/assets/logomercadona.png" alt="logo-mercadona"  style="
+            height: 150px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        ">
+    </a>
 
- <a class="navbar-brand" href="index.php">
- <img src="data/assets/logomercadona.png" alt="logo-mercadona" class="img-fluid"
-style="height: 50px;">
-</a>
+    <div class="d-flex align-items-center">
+      <h2>Bienvenido: <?= $nombre ?></h2>
+      <img src="<?= $imagen ?>" alt="Avatar" class="avatar" style="
+            height: 90px;
+            width: 140px;
+            object-fit: contain;
+            display: block;">
+    </div>
 
- <div>
-<div class="d-flex align-items-center">
- <h2>Bienvenido:<?= $nombre ?></h2>
- <img src="<?= $imagen ?>" alt="Avatar" class="rounded-circle"
-style="width: 50px; height: 50px;">
-</div>
-
-
-
-<span class="navbar-toggler-icon"> </span>
+  </div>
+</header>
