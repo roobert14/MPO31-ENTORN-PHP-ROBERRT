@@ -37,7 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["eliminar"])) {
     $id = $_POST["id"];
 
     if (array_key_exists($id, $encarrecs)) {
-        unset($encarrecs[$id]);
         $encarrecs = array_values($encarrecs);
 
         $missatge = "L'encàrrec s'ha eliminat correctament.";
