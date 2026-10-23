@@ -1,48 +1,35 @@
-
 <?php
 include __DIR__ . "/dades.php";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["afegir"])) {
+if (isset($_POST["afegir"])) {
 
-    $titol = trim($_POST["titol"]);
-    $client = trim($_POST["client"]);
+    $titol = $_POST["titol"];
+    $client = $_POST["client"];
     $hores = $_POST["hores"];
     $estat = $_POST["estat"];
-    $textEtiquetes = trim($_POST["etiquetes"]);
+    $etiquetes = explode(",", $_POST["etiquetes"]);
 
-    if ($titol != "" && $client != "" && is_numeric($hores) && $hores > 0) {
-
-        $etiquetes = explode(",", $textEtiquetes);
-
-        foreach ($etiquetes as $posicio => $etiqueta) {
-            $etiquetes[$posicio] = trim($etiqueta);
-        }
-
-        $nouEncarrec = [
-            "titol" => $titol,
-            "client" => $client,
-            "hores" => $hores,
-            "estat" => $estat,
-            "etiquetes" => $etiquetes
-        ];
-
-        $encarrecs[] = $nouEncarrec;
-
-        $missatge = "L'encàrrec s'ha afegit correctament.";
+    foreach ($etiquetes as $posicio => $etiqueta) {
+        $etiquetes[$posicio] = trim($etiqueta);
     }
+
+    $encarrecs[] = [
+        "titol" => $titol,
+        "client" => $client,
+        "hores" => $hores,
+        "estat" => $estat,
+        "etiquetes" => $etiquetes
+    ];
+
+    $missatge = "L'encàrrec s'ha afegit correctament.";
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["eliminar"])) {
-
+if (isset($_POST["eliminar"])) {
     $id = $_POST["id"];
+    unset($encarrecs[$id]);
 
-    if (array_key_exists($id, $encarrecs)) {
-        $encarrecs = array_values($encarrecs);
-
-        $missatge = "L'encàrrec s'ha eliminat correctament.";
-    }
+    $missatge = "L'encàrrec s'ha eliminat correctament.";
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -126,7 +113,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["eliminar"])) {
 
             <div class="accions-encarrec">
                 <a href="detall.php?id=<?php echo $id; ?>" class="btn-detall">Veure detall</a>
-                <a href="eliminar.php?id=<?php echo $id; ?>" class="btn-eliminar">Eliminar</a>
+                <form method="POST">
+                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+                    <button type="submit" name="eliminar" class="btn-eliminar">
+                        Eliminar
+                    </button>
+                </form>
             </div>
 
 </div>
@@ -161,7 +153,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["eliminar"])) {
                 <input type="text" name="client" placeholder="Nom del client" required>
             </div>
 
-            <!-- Fila doble per a Hores i Estat -->
             <div class="fila-doble">
                 <div class="camp-form">
                     <label>Hores estimades</label>
@@ -188,9 +179,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["eliminar"])) {
 
     </div>
 </section>
-
-
-
 
      <?php
     include __DIR__ . "/includes/footer.php";
