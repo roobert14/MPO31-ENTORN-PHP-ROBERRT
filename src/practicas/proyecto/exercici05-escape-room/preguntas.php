@@ -33,11 +33,11 @@ $nivells = [
     "dificil" => [
             [
             "pregunta" => "Estàs tancat en una habitació amb una porta tancada amb clau. Només tens una espelma, una caixa de llumins i un mirall. Què has d'encendre primer per poder escapar?",
-            "resposta" => "Un llumí."
+            "resposta" => "Un llumi"
             ],
         [
             "pregunta" => "Un pare i un fill tenen un accident. El pare mor i el fill va a l’hospital. El cirurgià diu: «No puc operar-lo, és el meu fill». Com és possible?",
-            "resposta" => "El cirurgià és la seva mare."
+            "resposta" => "El cirurgia es la seva mare"
         ],
         [
             "pregunta" => "Un home mira una fotografia i diu: «No tinc germans, però el pare d'aquest home és el fill del meu pare». Qui surt a la fotografia?",

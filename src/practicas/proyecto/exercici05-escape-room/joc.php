@@ -82,16 +82,19 @@ $noms = [
 <head>
     <meta charset="UTF-8">
     <title>Escape Room</title>
+    <link rel="stylesheet" href="joc.css">
 </head>
 <body>
+
+<div class="game-box">
 
 <?php if (isset($_SESSION['canvi_nivell'])): ?>
 
     <h1>Enhorabona!</h1>
 
-    <p><?php echo $_SESSION['missatge']; ?></p>
+    <p class="message"><?php echo $_SESSION['missatge']; ?></p>
 
-    <p>Has passat al nivell <?php echo $noms[$nivell]; ?>.</p>
+    <p>Has passat al nivell <strong><?php echo $noms[$nivell]; ?></strong>.</p>
 
     <form method="POST">
         <button type="submit" name="continuar">Continuar</button>
@@ -101,22 +104,28 @@ $noms = [
 
     <h1>Escape Room</h1>
 
-    <p>Jugador: <?php echo $_SESSION['nom']; ?></p>
+    <p class="player-info">Jugador: <?php echo $_SESSION['nom']; ?></p>
 
     <h2>Nivell: <?php echo $noms[$nivell]; ?></h2>
 
     <h3>Pregunta <?php echo $preguntaIdx + 1; ?> de 3</h3>
 
-    <p><?php echo $preguntaActual; ?></p>
+    <div class="question-text">
+        <p><?php echo $preguntaActual; ?></p>
+    </div>
 
-    <p><?php echo $_SESSION['missatge']; ?></p>
+    <?php if (!empty($_SESSION['missatge'])): ?>
+        <p class="message"><?php echo $_SESSION['missatge']; ?></p>
+    <?php endif; ?>
 
     <form method="POST">
-        <input type="text" name="resposta" placeholder="Escriu la resposta" required>
+        <input type="text" name="resposta" placeholder="Escriu la resposta..." required autocomplete="off">
         <button type="submit">Enviar resposta</button>
     </form>
 
 <?php endif; ?>
+
+</div>
 
 </body>
 </html>

@@ -14,16 +14,19 @@ $nom = $_SESSION['nom'];
 <head>
     <meta charset="UTF-8">
     <title>Final del joc</title>
+    <link rel="stylesheet" href="final.css">
 </head>
 <body>
 
-    <h1>Enhorabona, <?php echo $nom; ?>!</h1>
+    <div class="final-box">
+        <h1>Enhorabona, <?php echo $nom; ?>!</h1>
 
-    <h2>Has completat l'Escape Room!</h2>
+        <h2>Has completat l'Escape Room!</h2>
 
-    <p>Has superat tots els nivells: fàcil, mitjà i difícil.</p>
+        <p>Has superat tots els nivells: fàcil, mitjà i difícil.</p>
 
-    <a href="index.php">Tornar a jugar</a>
+        <a href="index.php" class="btn-restart">Tornar a jugar</a>
+    </div>
 
 </body>
 </html>
