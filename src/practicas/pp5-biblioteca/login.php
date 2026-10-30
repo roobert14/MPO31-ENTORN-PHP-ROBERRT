@@ -1,9 +1,37 @@
 <?php
-session_start();
+
+include "functions.php";
+
 $usuarios = [
-    ["username" => "admin", "password" => "adminpass", "role" => "admin"],
-    ["username" => "reader", "password" => "readerpass", "role" => "lector"]
+    ["username" => "admin", "password" => password_hash("adminpass", PASSWORD_DEFAULT), "role" => "admin"],
+    ["username" => "reader", "password" => password_hash("readerpass", PASSWORD_DEFAULT), "role" => "lector"]
 ];
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $usuari = $_POST['username'] ?? "";
+    $password = $_POST['password'] ?? "";
+    $photo = $_POST['photo'] ?? "";
+
+    foreach ($usuarios as $usuario) {
+
+        if ($usuari == $usuario['username'] && password_verify($password, $usuario['password'])) {
+
+            $_SESSION['username'] = $usuari;
+            $_SESSION['role'] = $usuario['role'];
+            $_SESSION['photo'] = $photo;
+
+            header('Location: home.php');
+            exit;
+
+        }
+
+    }
+
+    echo "<p class='error'>Usuario o contraseña equivocados</p>";
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -11,47 +39,31 @@ $usuarios = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca Virtual - Login</title>
-    <link rel="stylesheet" href="style.css"> <!-- Usa el archivo de estilo que acompaña a la estructura de HTML proporcionada -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <section>
-        <!-- Elementos de fondo decorativos -->
-        <?php for ($i = 0; $i < 180; $i++): ?>
-            <span></span>
-        <?php endfor; ?>
 
-        <!-- Sección de inicio de sesión -->
-        <div class="signin">
-            <div class="content text-center">
-                <h2>Inicia sesión</h2>
-                <form method="xxxxx" action="login.php">
-                    <div class="inputBox ">
-                        <input class="p-2 m-2" placeholder="Username" type="text" name="" required>
-                       
-                    </div>
-                    <div class="inputBox ">
-                        <input class="p-2 m-2" placeholder="Password" type="password" name="" required>
-                       
-                    </div>
-                    <div class="inputBox ">
-                        <input class="p-2 m-2" placeholder="Foto de perfil" type="text" name="" required>
-                       
-                    </div>
-                    <?php if (!empty($error)) : ?>
-                        <div class="alert alert-danger"><?= $error ?></div>
-                    <?php endif; ?>
-                    
-                    <div class="inputBox">
-                        <input class="bg-warning btn mt-2" type="submit" value="Iniciar">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
+    <div class="login">
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <h1>Iniciar sesión</h1>
+
+        <form action="" method="POST">
+
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username">
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password">
+
+            <label for="photo">Foto de perfil:</label>
+            <input type="text" id="photo" name="photo">
+
+            <input type="submit" value="Entrar">
+
+        </form>
+
+    </div>
 
 </body>
 </html>

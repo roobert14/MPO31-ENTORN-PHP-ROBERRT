@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f0e9;
+    color: #333;
+}
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.bienvenida {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bienvenida h1 {
+    color: #263b32;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.bienvenida p {
+    color: #666;
+}
+
+.bienvenida img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: #f3f0e9;
+}
+
+
+.agregar {
+    display: inline-block;
+    background-color: #496b54;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+}
+
+.agregar:hover {
+    background-color: #344e3c;
+}
+
+.titulo-seccion {
+    color: #263b32;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.libros {
+    margin-top: 20px;
+}
+
+.libro {
+    display: flex;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    gap: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.libro img {
+    width: 150px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.informacion {
+    padding: 10px;
+}
+
+.informacion h2 {
+    color: #263b32;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.informacion p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.editar,
+.eliminar {
+    display: inline-block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.editar {
+    background-color: #3d6685;
+}
+
+.editar:hover {
+    background-color: #294b65;
+}
+
+.eliminar {
+    background-color: #b84c4c;
+}
+
+.eliminar:hover {
+    background-color: #913838;
+}
+
+.cerrar {
+    display: inline-block;
+    background-color: #666;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+.cerrar:hover {
+    background-color: #444;
+}
