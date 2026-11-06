@@ -176,7 +176,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo '<div class="card-basura">';
                 $rand = array_rand($_SESSION['basuras']);
                 echo("<img src='{$_SESSION['basuras'][$rand]['img']}'>");
-                echo ("<p> '{$_SESSION['basuras'][$rand]['container'] '>");
                 echo '</div>';
             }
         }
