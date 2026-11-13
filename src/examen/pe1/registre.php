@@ -1,3 +1,43 @@
+<?php
+session_start();
+require_once 'dades.php';
+
+$error = "";
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $usuari = $_POST['usuari'];
+    $pass1 = $_POST['password'];
+    $pass2 = $_POST['password2'];
+
+    if ($usuari == "" || $pass1 == "" || $pass2 == "") {
+        $error = "Omple tots els camps";
+    } 
+    elseif ($pass1 != $pass2) {
+        $error = "Les contrasenyes no coincideixen";
+    } 
+    else {
+        foreach ($_SESSION['usuaris'] as $usu) {
+            if ($usu['usuari'] == $usuari) {
+                $error = "Aquest usuari ja existeix";
+            }
+        }
+
+        if ($error == "") {
+            $_SESSION['usuaris'][] = [
+                "id" => count($_SESSION['usuaris']) + 1,
+                "usuari" => $usuari,
+                "password" => password_hash($pass1, PASSWORD_DEFAULT),
+                "rol" => "jugador"
+            ];
+            header("Location: login.php");
+            exit;
+        }
+    }
+}
+?>
+
+
+
 <!doctype html>
 <html lang="ca">
   <head>
@@ -7,17 +47,9 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-
-    <header class="cap">
-      <div class="contenidor navegacio">
-        <a class="marca" href="index.html">TRIVIAL Pe1</a>
-        <nav class="enllacos">
-          <a href="index.html">Inici</a><a href="registre.html">Registre</a
-          ><a href="login.html">Login</a><a href="joc.html">Joc</a
-          ><a href="admin.html">Administració</a>
-        </nav>
-      </div>
-    </header>
+     <?php
+          include "header.php";
+      ?>
     <main class="contenidor">
       <section class="panell ample-mig">
         <h1>Registre de jugador</h1>
@@ -46,6 +78,8 @@
         </p>
       </section>
     </main>
-    <footer class="peu">AQUEST FOOTER HA DE SER REUTILITZABLE</footer>
+    <?php
+        include "footer.php";
+      ?>
   </body>
 </html>

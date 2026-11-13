@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once 'dades.php';
+?>
 <!doctype html>
 <html lang="ca">
   <head>
@@ -7,18 +11,9 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-        <!-- AQUEST HEADER HA DE SER REUTILITZABLE -->
-
-    <header class="cap">
-      <div class="contenidor navegacio">
-        <a class="marca" href="index.html">Trivial Pe1</a>
-        <nav class="enllacos">
-          <a href="index.html">Inici</a><a href="registre.html">Registre</a
-          ><a href="login.html">Login</a><a href="joc.html">Joc</a
-          ><a href="admin.html">Administració</a>
-        </nav>
-      </div>
-    </header>
+       <?php
+            include "header.php";
+      ?>
     <main class="contenidor">
       <section class="panell">
         <span class="etiqueta">Examen pràctic · PHP</span>
@@ -31,20 +26,18 @@
           <div>
             <h2>Soc jugador</h2>
             <p>Registra't, inicia sessió i supera les preguntes una a una.</p>
-            <a class="btn" href="registre.html">Crear compte</a>
-            <a class="btn btn-sec" href="login.html">Ja tinc compte</a>
+            <a class="btn" href="registre.php">Crear compte</a>
+            <a class="btn btn-sec" href="login.php">Ja tinc compte</a>
           </div>
           <div>
             <h2>Soc administrador</h2>
             <p>
               Gestiona el banc de preguntes: consulta, afegeix, edita i elimina.
             </p>
-            <a class="btn btn-sec" href="admin.html">Veure exemple del CRUD</a>
+            <a class="btn btn-sec" href="admin.php">Veure exemple del CRUD</a>
           </div>
         </div>
-        
       </section>
     </main>
-    <footer class="peu">AQUEST FOOTER HA DE SER REUTILITZABLE</footer>
   </body>
 </html>

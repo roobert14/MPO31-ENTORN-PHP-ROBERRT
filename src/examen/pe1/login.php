@@ -1,3 +1,34 @@
+<?php
+session_start();
+require_once 'dades.php';
+
+$error = "";
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $usuari = $_POST['usuari'];
+    $password = $_POST['password'];
+    
+    foreach ($_SESSION['usuaris'] as $usu) {
+        if ($usu['usuari'] == $usuari) {
+            if (password_verify($password, $usu['password'])) {
+                $_SESSION['usuari'] = $usu;
+                if ($usu['rol'] == 'admin') {
+                    header("Location: admin.php");
+                } else {
+                    header("Location: joc.php");
+                }
+                exit;
+            } else {
+                $error = "Contrasenya incorrecta";
+            }
+        }
+    }
+    if ($error == "") {
+        $error = "Usuari incorrecte";
+    }
+}
+?>
+
 <!doctype html>
 <html lang="ca">
   <head>
@@ -7,22 +38,17 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-        <!-- AQUEST HEADER HA DE SER REUTILITZABLE -->
 
-    <header class="cap">
-      <div class="contenidor navegacio">
-        <a class="marca" href="index.html">TRIVIAL Pe1</a>
-        <nav class="enllacos">
-          <a href="index.html">Inici</a><a href="registre.html">Registre</a
-          ><a href="login.html">Login</a><a href="joc.html">Joc</a
-          ><a href="admin.html">Administració</a>
-        </nav>
-      </div>
-    </header>
+     <?php
+            include "header.php";
+      ?>
     <main class="contenidor">
       <section class="panell ample-mig">
         <h1>Iniciar sessió</h1>
         <p class="subtitol">Accedeix com a jugador o administrador.</p>
+        <?php
+        echo($error)
+        ?>
         <form action="#" method="post">
           <label class="camp"
             >Nom d'usuari<input name="usuari" type="text" required /></label
@@ -39,6 +65,8 @@
         </p>
       </section>
     </main>
-    <footer class="peu">AQUEST FOOTER HA DE SER REUTILITZABLE</footer>
+    <?php
+        include "footer.php";
+      ?>
   </body>
 </html>
