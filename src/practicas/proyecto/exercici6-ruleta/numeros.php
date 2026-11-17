@@ -86,7 +86,4 @@ $_SESSION['terceracolumna'] = [
     30, 33, 36];
 
 
-
-
-
 ?>
