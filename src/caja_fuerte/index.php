@@ -76,7 +76,7 @@
 <div class="caja">
     <h2>Reto PHP - Número 9</h2>
 
-    <!-- Aquí se muestran las adivinanzas -->
+    <!-- Adivinanzas -->
     <div class="adivinanza">
         <strong>Enigma 1:</strong> En Fortnite no soy ni oro ni soy bronce. ¿Cuál es mi nombre original en inglés?
     </div>
@@ -98,19 +98,26 @@
         <input type="submit" name="enviar" value="Enviar">
     </form>
 
+    <!-- PHP con implode y explode -->
     <?php
     if (isset($_POST['enviar'])) {
         $num = $_POST['numero'];
         $e1 = $_POST['enigma1'];
         $e2 = $_POST['enigma2'];
 
-        $resultado = $num + strlen($e1) + strlen($e2);
+        $lista_respuestas = array($e1, $e2);
+        $texto_unido = implode("-", $lista_respuestas);
+
+        $datos_separados = explode("-", $texto_unido);
+
+        $resultado = $num + strlen($datos_separados[0]) + strlen($datos_separados[1]);
 
         echo "<div class='resultado'>";
         echo "<strong>Resultado:</strong><br>";
         echo "Número inicial: " . $num . "<br>";
-        echo "Enigma 1: " . $e1 . "<br>";
-        echo "Enigma 2: " . $e2 . "<br><br>";
+        echo "Unido con implode: " . $texto_unido . "<br>";
+        echo "Enigma 1 (explode): " . $datos_separados[0] . "<br>";
+        echo "Enigma 2 (explode): " . $datos_separados[1] . "<br><br>";
         echo "<strong>Tu nuevo número es: " . $resultado . "</strong>";
         echo "</div>";
     }
