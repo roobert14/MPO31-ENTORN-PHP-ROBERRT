@@ -115,7 +115,6 @@
         echo "<div class='resultado'>";
         echo "<strong>Resultado:</strong><br>";
         echo "Número inicial: " . $num . "<br>";
-        echo "Unido con implode: " . $texto_unido . "<br>";
         echo "Enigma 1 (explode): " . $datos_separados[0] . "<br>";
         echo "Enigma 2 (explode): " . $datos_separados[1] . "<br><br>";
         echo "<strong>Tu nuevo número es: " . $resultado . "</strong>";
